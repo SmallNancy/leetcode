@@ -26,6 +26,7 @@ public class AddTwo {
 
     }
 
+
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode ln1 = l1,ln2 = l2,head = null,node = null;
         int carry = 0,contain = 0,sum = 0;
@@ -43,7 +44,6 @@ public class AddTwo {
     }
 
 }
-
 class ListNode {
      int val;
      ListNode next;
@@ -53,10 +53,9 @@ class ListNode {
 
     @Override
     public String toString() {
-        return "ListNode{" +
+        return "ListNode:" +
                 "val=" + val +
-                ", next=" + next +
-                '}';
+                ", next=" + next ;
     }
 
 }
