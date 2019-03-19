@@ -1,7 +1,7 @@
 package cn.sort;
 
 /**
- *  八大排序之：冒泡排序以及优化处理
+ * 八大排序之：冒泡排序以及优化处理
  */
 public class BubbleSort {
     public static void main(String[] args) {
