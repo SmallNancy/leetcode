@@ -1,4 +1,4 @@
-package cn.nancy;
+package cn.leetCode;
 
 /**
  * leetCode 02

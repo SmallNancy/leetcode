@@ -1,4 +1,4 @@
-package cn.nancy;
+package cn.leetCode;
 
 import java.util.HashMap;
 import java.util.Map;
