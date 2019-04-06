@@ -20,24 +20,24 @@ import java.util.Set;
  */
 public class LongestString {
     public static void main(String[] args) {
-        String s = "abcabcbb";
+        String s = "pwwkew";
         System.out.println(lengthOfLongestSubstring(s));
 
     }
 
     // TODO 最长不相同子串
     public static int lengthOfLongestSubstring(String s) {
-        int i = 0,j = 0,max = 0;
-        Set<Character> set = new HashSet<>();
-        while(j < s.length()){
-            if (!set.contains(s.charAt(j))){
-                set.add(s.charAt(j++));
-                max = Math.max(max,set.size()); // 保留最大长度
-            }else {
+        int i = 0, j = 0;
+        int max = 0;
+        Set<Character> set = new HashSet<Character>();
+        while(j < s.length()) {
+            if (set.contains(s.charAt(j))){
                 set.remove(s.charAt(i++));
+            }else {
+                set.add(s.charAt(j++));
+                max = max > set.size() ? max : set.size();
             }
         }
-        //max = set.size();
         return max;
     }
 }

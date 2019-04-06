@@ -29,19 +29,23 @@ public class AddTwo {
 
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode ln1 = l1,ln2 = l2,head = null,node = null;
-        int carry = 0,contain = 0,sum = 0;
-        head = node = new ListNode(0);
-        while(ln1 != null || ln2 != null || carry != 0){
-            sum = (ln1!= null ?ln1.val:0) + (ln2 != null ?ln2.val:0) + carry;
-            carry = sum/10;
+        ListNode temp = new ListNode(0);
+        ListNode head = temp;
+        int sum = 0;      //原始和
+        int carry =  0;   //进位
+        int contain = 0;  //数值
+        while(l1 != null || l2 != null || carry != 0) {
+            sum = (l1 != null ? l1.val:0) +(l2 != null ? l2.val : 0) + carry;
+            carry = sum / 10;
             contain = sum % 10;
-            node = node.next = new ListNode(contain);
-            ln1 = (ln1 != null ? ln1.next : null);
-            ln2 = (ln2 != null ? ln2.next : null);
-        }
+            head = head.next = new ListNode(contain);
+            l1 = l1 != null ? l1.next : null;
+            l2 = l2 != null ? l2.next : null;
 
-        return  head.next;
+        }
+        return temp.next;
+
+
     }
 
 }
