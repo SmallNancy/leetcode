@@ -1,6 +1,8 @@
 package cn.swordPointOffer;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * @Author: Nancy
@@ -8,18 +10,35 @@ import java.util.ArrayList;
  * 从上往下打印出二叉树的每个节点，同层节点从左至右打印
  */
 public class BinaryTree {
-    ArrayList<Integer> list = new ArrayList<>();
-
-    public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
-        if (root == null)
-            return null;
-        if (root.left == null && root.right == null)
-            list.add(root.val);
-        TreeNode temp = root;
-
-
-        return list;
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(8);
+        root.left = new TreeNode(6);
+        root.right = new TreeNode(10);
+        root.left.left = new TreeNode(5);
+        root.left.right = new TreeNode(7);
+        root.right.left = new TreeNode(9);
+        //root.right.right = new TreeNode(11);
+        System.out.println(PrintFromTopToBottom(root).toString());
     }
+
+
+
+    public static ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        if (root == null)
+            return list;
+        Deque<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+           TreeNode t = queue.pop();
+            list.add(t.val);
+            if (t.left != null) queue.add(t.left);
+            if (t.right != null) queue.add(t.right);
+        }
+        return list;
+
+    }
+
 
 
 }
