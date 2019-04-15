@@ -11,7 +11,7 @@ public class 旋转数组 {
         long startTime = System.currentTimeMillis();
         rotate(nums,k);
         long endTime = System.currentTimeMillis();
-//        /System.out.println(endTime-startTime);
+//      System.out.println(endTime-startTime);
         String str = "1234567";
         System.out.println(retateString(str,2));
     }
