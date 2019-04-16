@@ -10,17 +10,18 @@ public class Fibonacci {
 
     }
     public static int Fib(int n) {
-        int[] F = new int [n+1];
         if (n < 1) {
             return -1;
         }
         if (n == 1 || n == 2)
             return 1;
-        F[1] = 1;
-        F[2] = 1;
+        int a1 = 1;
+        int a2 = 1;
         for (int i = 3;i <= n;i++) {
-            F[i] = F[i-1] +F[ i-2];
+            int temp = a2;
+            a2 += a1;
+            a1 = temp;
         }
-        return F[n];
+        return a2;
     }
 }
