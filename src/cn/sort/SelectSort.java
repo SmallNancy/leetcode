@@ -11,9 +11,27 @@ public class SelectSort {
     public static void main(String[] args) {
         int[] arr = {6,3,2,4,1,7,8};
         SellSort.show(arr);
-        select(arr);
+        select2(arr);
         SellSort.show(arr);
 
+    }
+
+    public static void select2(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                minIndex = arr[j] < arr[minIndex] ? j: minIndex;
+            }
+            if (minIndex != i) {
+                int temp = arr[i];
+                arr[i] = arr[minIndex];
+                arr[minIndex] = temp;
+            }
+
+        }
     }
 
     public static void select(int[] arr){
